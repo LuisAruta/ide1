@@ -1,0 +1,22 @@
+language: java
+jdk:
+  - oraclejdk8
+branches:
+  only:
+    - develop
+    - master
+notifications:
+  email:
+    recipients:
+      - luis_aruta@hotmail.com.ar
+# services:
+# - mysql
+# - mongodb
+# before_install:
+# - mysql -e 'CREATE DATABASE IF NOT EXISTS forge;'
+script:
+  #Test unitario y de integracion con cobertura (jacoco)
+  - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
+
+  #SONARCLOUD
+  - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=luisaruta -Dsonar.login=$SONAR
