@@ -7,6 +7,7 @@ public class User {
     private String name;
 
     private String familyName;
+    private int nada;
 
     public User(int number, String name, String familyName) {
         this.number = number;
