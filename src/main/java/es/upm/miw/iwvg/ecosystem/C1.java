@@ -5,6 +5,7 @@ public class C1 {
 
     public void M2(){
         int x;
+        int y;
     }
     public void M3(){
 
